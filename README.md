@@ -9,7 +9,7 @@ Build the rust cdynlib
 Compile the C code
 
 ```sh
-gcc -L./target/debug -lrustffi call_rust.c -o call_rust.o
+gcc -L./target/debug call_rust.c -lrustffi -o call_rust.o
 ```
 
 Executing the compiled binary
@@ -36,3 +36,9 @@ Executing the compiled binary
 ```sh
 LD_LIBRARY_PATH=./target/debug ./call_rust_cpp.o
 ```
+
+## Problems
+
+undefined reference to 'hello_from_rust'
+
+solution: https://stackoverflow.com/a/61718084
